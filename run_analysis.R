@@ -11,6 +11,8 @@ runAnalysis <- function () {
         subTrain <- read.table("train/subject_train.txt")
         trainX <- read.table("train/X_train.txt")
         trainY <- read.table("train/Y_train.txt")
+        activities <- read.table("activity_labels.txt")
+        features <- read.table("features.txt")
 
         #change names of first column in testY, subTest, trainY, and subTrain so as not to be confused with V1 in X data
         names(testY)[1] <- "Activity"
@@ -26,17 +28,11 @@ runAnalysis <- function () {
         #rbind the two datasets created in the last step
         data <- rbind(dataTest,dataTrain)
         
-        #load in activity lablels file
-        activities <- read.table("activity_labels.txt")
-        
         #Replace values is Activity with descriptive name
         for (i in activities$V1) {
-                data$Activity <- gsub(i,activities[i,2],data$Activity)
+                data$Activity <- gsub(paste0("^", i, "$"),activities[i,2],data$Activity)
         }
         
-        #load in features file
-        features <- read.table("features.txt")
-
         #Replace column names in dataset using data from features.txt
         nrows <- nrow(features)
         end <- ncol(data)
@@ -60,13 +56,45 @@ runAnalysis <- function () {
         dataFac <- factor(data$Subject)
         subjects <- as.numeric(levels(dataFac))
         
-        dataTwo
+        #set second dataset to null and then find the number of columns in the dataset, store
+        #number of columns in a variable so you only calculate once
+        dataTwo <- NULL
+        numCols <- ncol(data)
         
+        #start a loop of all the subjects
         for (i in subjects){
+                
+                #for each subject find out how many activities there are using factoring
                 dataFacAct <- factor(data[data$Subject == i,2])
                 activitiesSub <- levels(dataFacAct)
-                        for(i in activitiesSub){
+                
+                        #create a sub loop for EACH activity performed by EACH subject
+                        for (a in activitiesSub){
+                          
+                                #subset the data to the current subject and activity within
+                                #the loop, then remove the 'Subject' and 'Activity' columns so
+                                #we can use colMeans function on remaining columns
+                                subset <- data[data$Subject == i & data$Activity == a,]
+                                subset <- subset[,3:numCols]
                                 
+                                #use colMeans function to calculate means, then add back
+                                #'Subject' and 'Activity' columns
+                                result <- colMeans(subset)
+                                result <- c(i, a, result)
+                                names(result)[1] <- "Subject"
+                                names(result)[2] <- "Activity"
+                                
+                                #if this is the first row then assign it to the null dataTwo variable,
+                                #if not then bind this row to the existing dataTwo variable
+                                if (length(dataTwo) == 0) dataTwo <- result
+                                else if (length(dataTwo) != 0) dataTwo <- rbind(dataTwo, result)
                         }
         }
+        
+        #remove row names so that you can coerce to a data frame
+        row.names(dataTwo) <- NULL
+        dataTwo <- as.data.frame(dataTwo)
+        
+        #return second dataset
+        dataTwo
 }
