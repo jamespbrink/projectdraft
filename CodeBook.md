@@ -12,14 +12,14 @@ More info: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Usi
 ---------------
 These are the files that are extracted from the dataset that will be used to create our tidy datasets:
 
--features.txt   Lists the features measured.  
--activity_labels.txt   Lists the different activities and how they are coded.  
--test/X_test.txt   Set of measured features for test data.  
--test/Y_test.txt   Set of activities for test data.  
--test/subject_test.txt   Set of subjects for test data.  
--train/X_train.txt   Set of measured features for training data.  
--train/Y_train.txt   Set of activities for training data.  
--train/subject_train.txt  Set of subjects for training data.  
+*features.txt   Lists the features measured.  
+*activity_labels.txt   Lists the different activities and how they are coded.  
+*test/X_test.txt   Set of measured features for test data.  
+*test/Y_test.txt   Set of activities for test data.  
+*test/subject_test.txt   Set of subjects for test data.  
+*train/X_train.txt   Set of measured features for training data.  
+*train/Y_train.txt   Set of activities for training data.  
+*train/subject_train.txt  Set of subjects for training data.  
 
 ##Output
 ---------------
