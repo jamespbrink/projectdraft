@@ -3,24 +3,25 @@
 
 ##Author
 -----------------
-James Brink - james.p.brink@gmail.com
+James Brink - james.p.brink@gmail.com  
 http://www.github.com/jamespbrink
 
 ##Project Introduction
 -----------------
 The purpose of this project is to demonstrate my ability to collect, work with, and clean a dataset.  The dataset used in this project can be downloaded from the link below.  The dataset contains data collected from the accelerometer in a Samsung Galaxy S smartphone.  In this project we select a specific set of measurements from the larger dataset and organize them according to different test subjects and activities.
 
-Data: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
-More info: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
+Data: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip  
+More info: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones  
 
 ##Project Objectives
 ------------------
-Create an R script that does the following:
-1. Merges the training and the test sets to create one data set.
-2. Extracts only the measurements on the mean and standard deviation for each measurement. 
-3. Uses descriptive activity names to name the activities in the data set.
-4. Appropriately labels the data set with descriptive variable names. 
-5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+Create an R script that does the following:  
+
+1. Merges the training and the test sets to create one data set.  
+2. Extracts only the measurements on the mean and standard deviation for each measurement.  
+3. Uses descriptive activity names to name the activities in the data set.  
+4. Appropriately labels the data set with descriptive variable names.  
+5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.  
 
 ##run_analysis.R: Step by Step
 ------------------

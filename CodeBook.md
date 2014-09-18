@@ -5,20 +5,21 @@
 -----------------
 The purpose of this project is to demonstrate my ability to collect, work with, and clean a dataset.  The dataset used in this project can be downloaded from the link below.  The dataset contains data collected from the accelerometer in a Samsung Galaxy S smartphone.  In this project we select a specific set of measurements from the larger dataset and organize them according to different test subjects and activities.
 
-Data: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
+Data: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip   
 More info: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
 
 ##Source Files
 ---------------
 These are the files that are extracted from the dataset that will be used to create our tidy datasets:
--features.txt   Lists the features measured.
--activity_labels.txt   Lists the different activities and how they are coded.
--test/X_test.txt   Set of measured features for test data.
--test/Y_test.txt   Set of activities for test data.
--test/subject_test.txt   Set of subjects for test data.
--train/X_train.txt   Set of measured features for training data.
--train/Y_train.txt   Set of activities for training data.
--train/subject_train.txt  Set of subjects for training data.
+
+-features.txt   Lists the features measured.  
+-activity_labels.txt   Lists the different activities and how they are coded.  
+-test/X_test.txt   Set of measured features for test data.  
+-test/Y_test.txt   Set of activities for test data.  
+-test/subject_test.txt   Set of subjects for test data.  
+-train/X_train.txt   Set of measured features for training data.  
+-train/Y_train.txt   Set of activities for training data.  
+-train/subject_train.txt  Set of subjects for training data.  
 
 ##Output
 ---------------
@@ -37,28 +38,28 @@ Finally a Fast Fourier Transform (FFT) was applied to some of these signals prod
 These signals were used to estimate variables of the feature vector for each pattern:  
 '-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
 
-tBodyAcc-XYZ
-tGravityAcc-XYZ
-tBodyAccJerk-XYZ
-tBodyGyro-XYZ
-tBodyGyroJerk-XYZ
-tBodyAccMag
-tGravityAccMag
-tBodyAccJerkMag
-tBodyGyroMag
-tBodyGyroJerkMag
-fBodyAcc-XYZ
-fBodyAccJerk-XYZ
-fBodyGyro-XYZ
-fBodyAccMag
-fBodyAccJerkMag
-fBodyGyroMag
-fBodyGyroJerkMag
+tBodyAcc-XYZ  
+tGravityAcc-XYZ  
+tBodyAccJerk-XYZ  
+tBodyGyro-XYZ  
+tBodyGyroJerk-XYZ  
+tBodyAccMag  
+tGravityAccMag  
+tBodyAccJerkMag  
+tBodyGyroMag  
+tBodyGyroJerkMag  
+fBodyAcc-XYZ  
+fBodyAccJerk-XYZ  
+fBodyGyro-XYZ  
+fBodyAccMag  
+fBodyAccJerkMag  
+fBodyGyroMag  
+fBodyGyroJerkMag  
 
 The set of variables that were estimated from these signals are: 
 
-mean(): Mean value
-std(): Standard deviation
+mean(): Mean value  
+std(): Standard deviation  
 
 
 ##Variables
